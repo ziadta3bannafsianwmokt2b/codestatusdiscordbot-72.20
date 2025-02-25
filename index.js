@@ -1,15 +1,4 @@
    const {client , ActivityType} = require ('discord.js');
-   const {joinVoiceChannel} = require ('@discordjs/voice');
-   client.on('messageCreate', (message) => {
-    if (message.mentions.has(client.user) && message.member.voice.channel) {
-      joinVoiceChannel({
-        channelId: message.member.voice.channel.id,
-        guildId: message.guild.id,
-        adapterCreator: message.guild.voiceAdapterCreator,
-      });
-      message.reply(`دخلت الروم بنجاح!`);
-    }
-  });
     client.on('ready', () => {
     let serverCount = client.guilds.cache.size;
     client.user.setStatus('dnd') // idle online dnd invisible
